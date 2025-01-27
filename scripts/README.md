@@ -2,7 +2,7 @@
 ```
 export DATADIR='path/to/pos/files/'
 export RRNG='/path/to/rangefile.rrng'
-export RESULTSDIR='path/to/save/output/'
+export RESULTSDIR='path/to/save/output'
 export R=1.0
 export O=0.5
 export MINK=4
@@ -27,5 +27,5 @@ for k in $K; do python run_clustering.py --datadir "${RESULTSDIR}"/neighborhoods
 
 python run_ks_stats.py --datadir "${RESULTSDIR}"/bulk_clustering --r $R --o $O --k $K --seeds ${SEED}
 
-python run_community_mapping.py --datadir "${RESULTSDIR}"/bulk_clustering/processed --r $R --o $O --k $K --seeds ${SEED}
+python run_community_mapping.py --datadir "${RESULTSDIR}"/bulk_clustering --r $R --o $O --k $K --seeds ${SEED}
 ```
