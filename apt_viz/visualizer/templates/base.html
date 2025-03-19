@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href={{ url_for('static', filename='dist/css/styles.css') }} />
+    <link rel="stylesheet" href={{ url_for('static', filename='dist/css/nav.css') }} />
+    <link rel="stylesheet" href={{ url_for('static', filename='dist/css/forms.css') }} />
+    <link rel="stylesheet" href="https://use.typekit.net/uqq2lcv.css">
+    <script type="text/javascript" src={{ url_for('static', filename='javascript/visualize.js') }}></script>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $(function(){
+            $('a').each(function(){
+                if ($(this).prop('href') == window.location.href) {
+                    $(this).addClass('active'); $(this).parents('li').addClass('active');
+                }
+            });
+        });
+    </script>
+
+    <title>APT Analyzer</title>
+</head>
+<body>
+
+    <div class = "container">
+        <div class="nav-wrapper">
+            <nav>
+
+            </nav>
+        </div>
+        <div class="main-block">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <br>
+            {% block main %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

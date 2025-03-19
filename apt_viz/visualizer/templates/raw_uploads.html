@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <script type="text/javascript" src={{ url_for('static', filename='javascript/upload.js') }}></script>
+    <div class="page-title">
+        <h1>Raw Data File Uploads</h1>
+    </div>
+
+    <div class="upload-container">
+        <div class="card" id="raw-card">
+            <h3>Upload Files</h3>
+            <div class="drop-box" id="upload-form">
+                <header>
+                    <h4>Select Files Here</h4>
+                </header>
+                <p>Files Supported: APT, POS, RNG</p>
+                <form enctype="multipart/form-data" action="{{ url_for('upload_file') }}" method="post">
+                    <input type="file" id="fileID" name='file' style="display:none;" multiple>
+                    <button type="button" class="btn" id="choose-file-btn">Choose File</button>
+                    <!-- TODO: unhide the choose another file button along with the upload button and add functionality to it -->
+                    <button type="button" class="btn hidden" id="choose-another-file-btn">Choose Additional Files</button>
+                    <button type="submit" class="btn hidden" id="upload-btn">Upload</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

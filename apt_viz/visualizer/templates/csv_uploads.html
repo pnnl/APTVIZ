@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <script type="text/javascript" src={{ url_for("static", filename='javascript/upload.js') }}></script>
+    <div class="page-title">
+        <h1>CSV File Uploads</h1>
+    </div>
+
+    <div class="upload-container">
+        <div class="card" id="csv-card">
+            <h3>Upload Files</h3>
+            <div class="drop-box" id="upload-form">
+                <header>
+                    <h4>Select File Here</h4>
+                </header>
+                <p>Files Supported: CSV</p>
+                <form enctype="multipart/form-data" action="{{ url_for('upload_file') }}" method="post">
+                    <input type="file" id="fileID" name='file' style="display:none;">
+                    <button type="button" class="btn" id="choose-file-btn">Choose File</button>
+                    <div>
+                        <input type="checkbox" id="isclustered" name="isclustered" value="yes">
+                        <label for="isclustered"> This CSV is already clustered</label>
+                    </div>
+                    <button type="submit" class="btn hidden" id="upload-btn">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

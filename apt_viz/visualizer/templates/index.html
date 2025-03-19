@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <script type="text/javascript" src={{ url_for('static', filename='javascript/home.js') }}></script>
+    <div class="page-title">
+        <h1>Welcome to APT Visualizer</h1>
+    </div>
+    <h3>Please Select a Type of File to Upload</h3>
+    <div class="upload-container">
+        <div class="link-div card">
+            <a class="big-link" id="raw-upload-mode" href="{{ url_for('raw_uploads') }}">Upload Raw Data<br>(apt/pos + rrng file formats)</a>
+        </div>
+        <div class="link-div card">
+            <a class="big-link" id="csv-upload-mode" href="{{ url_for('csv_uploads') }}">Upload Preprocessed Data<br>(csv format)</a>
+        </div>
+    </div>
+{% endblock %}

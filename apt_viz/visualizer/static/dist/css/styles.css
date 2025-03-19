@@ -1,0 +1,250 @@
+body{
+    height:100%;
+    margin:0;
+    padding:0;
+    background:#e7ecf7;
+    /*background: #182635;*/
+    font-family:'Lato',sans-serif;
+}
+
+#dashboard{
+    height: 90vh;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+#dashboard-e{
+    height: 90vh;
+    width: 99vw;
+}
+
+.fig-div, #overlay{
+    background-color: white;
+    border-color: #1D2951;
+    border-radius: 10px;
+    border-width: 3px;
+    padding: 20px;
+    border-style: solid;
+}
+
+.fig-div H1{
+    text-align: center;
+}
+
+#dashboard-e {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#fig-container, #menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:stretch;
+}
+
+#fig-container {
+    align-items: stretch;
+    width: calc(99% - 350px);
+    height: calc(100% - 50px);
+    overflow-y: auto;
+}
+
+#menu-container {
+    width: 300px;
+    height: 300px;
+    position: sticky;
+}
+
+#row-1, #row-2 {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#animation-div {
+    margin-right: 20px;
+    min-width: 500px;
+    min-height: 500px;
+}
+
+#cone-div {
+    min-width: 500px;
+    min-height: 500px;
+    margin: "auto";
+    flex-grow: 2;
+}
+
+#correlation-div {
+    width: 100%;
+    /* height: 300px; */
+}
+
+
+#dashboard-e .fig-div {
+    max-width: 800px;
+    margin-bottom: 50px;
+    /* position: absolute; */
+}
+
+
+h1{
+    margin-top: 0px;
+    color: #1D2951;
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*button*/
+.big-button {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #1D2951;
+    margin-bottom: 10px;
+
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.big-button:hover,
+.big-button:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.big-button:active {
+  background: var(--color);
+  color: #fff;
+}
+
+/*Clustering page form*/
+legend {
+    /* background-color: #1D2951; */
+    color: #1D2951;
+    padding: 5px 10px;
+    background: linear-gradient(
+    90deg,
+    #faffcc 0%,
+    #f5eea3 5%,
+    #ffe48a 15%,
+    #ffb54d 55%,
+    #ff974d 85%,
+    #ff8052 100%);
+
+}
+
+fieldset {
+    background-color: white;
+    border: 3px solid #1D2951;
+    margin-bottom: 10px;
+}
+
+fieldset div {
+    margin-bottom: 10px;
+}
+
+fieldset p {
+    margin-top: 5px;
+}
+
+#cluster-button {
+    margin-top: 50px;
+}
+
+#clustering-form {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+    width: calc(100vw - 150px);
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* copying thing */
+/* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+/* Upload option cards */
+
+.h-container {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    width: 600px;
+    justify-content: space-evenly;
+}
+
+.link-div {
+    margin: 10px;
+    height: 600px;
+
+}
+
+.link-div:has(> #raw-upload-mode){
+    background: linear-gradient(
+      113deg,
+      hsl(260deg 100% 64%) 0%,
+      hsl(190deg 100% 55%) 100%
+    );
+}
+
+.link-div:has(> #csv-upload-mode){
+    background: linear-gradient(
+    90deg,
+    #faffcc 0%,
+    #f5eea3 5%,
+    #ffe48a 15%,
+    #ffb54d 55%,
+    #ff974d 85%,
+    #ff8052 100%);
+}
+
+.big-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    
+    text-align: center;
+    padding-top: 100px;
+    font-size: 40px;
+    /* -webkit-text-fill-color: #1D2951;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffffff; */
+    color: white;
+	-webkit-text-stroke: 0.5px whitesmoke;
+	text-shadow: 1px 3px 5px #1D2951;
+}
+
+.page-title h1 {
+    text-align: center;
+}
+
+.page-title ~ h3 {
+    text-align: center;
+    color: #1D2951;
+}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="page-title">
+        <h1>Model Input Parameter Selection</h1>
+    </div>
+{#    <a href="/dashapp/" class="dash-link">#}
+{#    <span>Embedded Plotly Dash</span>#}
+    <section id="clustering-form">
+        <form action="/visualize" method="POST" id="clustering">
+            <fieldset>
+                <legend>Clustering Method:</legend>
+                <div>
+                    <p>Which clustering method would you like to use?</p>
+                    <input type="radio" id="kmeans" name="method" value="kmeans" checked/>
+                    <label for="kmeans">Kmeans</label><br>
+                    <input type="radio" id="other" name="method" value="other">
+                    <label for="other">Other Method (available in future versions)</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Number of Clusters:</legend>
+                <div>
+                    <p>How would you like to choose the number of clusters?</p>
+                    <input type="radio" id="louvain" name="clusters_choice" value="louvain" checked/>
+                    <label for="louvain">Louvain Method</label>
+                    <div id="k_range">
+                        <input type="number" id="k_min" name="k_min" placeholder="min clusters"><p> - </p>
+                        <input type="number" id="k_max" name="k_max" placeholder="max clusters">
+                    </div>
+                    <br>
+                    <input type="radio" id="manual" name="clusters_choice" value="manual">
+                    <label for="manual">Manual Input</label>
+                    <input type="number" id="n_clusters" name="n_clusters" placeholder="number of clusters" style="visibility:hidden">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Other Settings:</legend>
+                <div>
+                    <p> You may adjust these default values if desired:</p>
+                    <label for="seed">Random Seed:</label><br>
+                    <input type="number" id="seed" name="seed" placeholder="42"><br>
+
+                    <label for="overlap">Percent overlap between neighborhoods:</label><br>
+                    <input type="number" id="overlap" name="overlap" placeholder="50%"><br>
+
+                    <label for="radius">Neighborhood Radius (nm):</label><br>
+                    <input type="number" id="radius" name="radius" placeholder="2">
+                </div>
+            </fieldset>
+
+        </form>
+
+        <button id="cluster-button", class="big-button" form="clustering">
+            Cluster With These Settings
+        </button>
+    </section>
+    </a>
+{% endblock %}

@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.upload-container {
+    height: calc(100vh - 80px);
+    width: calc(100vw - 150px);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* background-color: #fcfcfc; */
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+    width: 600px;
+    /* height: 300px; */
+    background-color: #ffffff;
+    padding: 10px 30px 40px;
+}
+
+#csv-card {
+    background: linear-gradient(
+    90deg,
+    #faffcc 0%,
+    #f5eea3 5%,
+    #ffe48a 15%,
+    #ffb54d 55%,
+    #ff974d 85%,
+    #ff8052 100%);
+}
+
+#raw-card {
+    background: linear-gradient(
+      113deg,
+      hsl(260deg 100% 64%) 0%,
+      hsl(190deg 100% 55%) 100%
+    );
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+	/* -webkit-text-stroke: 0.5px whitesmoke; */
+	text-shadow: 1px 3px 5px #1D2951;
+}
+
+.drop-box{
+    margin: 10px 0;
+    padding: 30px;
+    border: 3px dotted white;
+    border-radius: 5px;
+}
+
+.drop-box, .drop-box form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.drop-box p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: white;
+}
+
+.drop-box h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #1D2951;
+}
+
+#isclustered ~ label {
+    color: #1D2951;
+}
+
+.btn:not(.hidden) {
+    text-decoration: none;
+    background-color: #1D2951;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+.drop-box .btn:not(.hidden) {
+    margin-bottom: 20px;
+}
+
+.btn:not(.hidden):hover{
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #1D2951;
+    padding: 10px 20px;
+    border: none;
+    outline: 1px solid #010101;
+}
+
+.form input {
+    margin: 10px 0;
+    width: 100%;
+    background-color: #e2e2e2;
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+}
+
+#k_range {
+    margin: 0;
+    display: inline-block;
+}
+
+#k_range p{
+    display: inline-block;
+    margin: 0;
+}
+
+#k_range input{
+    display: inline-block;
+    margin: 0;
+}
