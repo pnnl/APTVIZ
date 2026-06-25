@@ -290,22 +290,3 @@ for sample_name, group in joined.groupby('sample'):
 
 The resulting per-sample XYZ files share the same community label space as the merged run,
 so communities are directly comparable across samples.
-
-## Reference
-
-If this analysis is used in published work, cite:
-
-```bibtex
-@article{bilbrey2025compositional,
-  title={Compositional Community Detection: Automated Identification of Chemical
-         Segregation in Atom Probe Tomography Data},
-  author={Bilbrey, Jenna A and Doty, Christina and Wirth, Mark G and Tong, Mengkong
-          and Royer, Jacqueline and Senor, David J and Devaraj, Arun},
-  journal={Microscopy and Microanalysis},
-  volume={31},
-  number={3},
-  pages={ozaf036},
-  year={2025},
-  publisher={Oxford University Press US}
-}
-```
